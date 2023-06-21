@@ -80,9 +80,6 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(''),
-      ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
@@ -90,15 +87,18 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              keyboardType: TextInputType.phone,
-              onChanged: (value) {
-                setState(() {
-                  _phoneNumber = value;
-                });
-              },
-              decoration: const InputDecoration(
-                hintText: 'Введите номер телефона',
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: TextField(
+                keyboardType: TextInputType.phone,
+                onChanged: (value) {
+                  setState(() {
+                    _phoneNumber = value;
+                  });
+                },
+                decoration: const InputDecoration(
+                  hintText: 'Телефон:',
+                ),
               ),
             ),
             const SizedBox(height: 20.0),
