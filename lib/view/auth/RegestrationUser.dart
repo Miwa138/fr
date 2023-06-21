@@ -22,7 +22,7 @@ class _LoginPageState extends State<RegestrationUser> {
             children: [
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'phone_login_page');
+                  Navigator.pushNamed(context, 'phone_login_page_user');
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.black),

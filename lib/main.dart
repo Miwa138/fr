@@ -8,7 +8,8 @@ import 'package:fr/view/HomePage.dart';
 import 'package:fr/view/Profile.dart';
 import 'package:fr/view/auth/GoogleLoginPage.dart';
 import 'package:fr/view/auth/Landing.dart';
-import 'package:fr/view/auth/PhoneLoginPage.dart';
+import 'package:fr/view/auth/PhoneLoginPageSeller.dart';
+import 'package:fr/view/auth/PhoneLoginPageUsers.dart';
 import 'package:fr/view/auth/RegestrationUser.dart';
 import 'package:fr/view/auth/RegisterSeller.dart';
 import 'package:fr/view/auth/SellerGoogleAuthPage.dart';
@@ -42,19 +43,20 @@ class MyApp extends StatelessWidget {
           }
           if (snapshot.hasData) {
 
-            return  PhoneLoginPage();
+            return const HomePage();
           }
           return const Landing();
         },),
       routes: {
         'home_page': (context) => const HomePage(),
-        "phone_login_page": (context) =>  PhoneLoginPage(),
+        "phone_login_page_seller": (context) =>  PhoneLoginPageSeller(),
         "google_login_page": (context) => const GoogleLoginPage(),
         "google_seller_login_page": (context) => const SellerGoogleLoginPage(),
         "profile_page": (context) => const ProfilePage(),
         "landing": (context) => const Landing(),
         "reg_seller": (context) => const RegestrationSeller(),
         "reg_buyer": (context) => const RegestrationUser(),
+        "phone_login_page_user": (context) =>  PhoneLoginPageUsers(),
       },
     );
   }

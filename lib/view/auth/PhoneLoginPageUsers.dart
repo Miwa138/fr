@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fr/view/HomePage.dart';
 
-class PhoneLoginPage extends StatefulWidget {
+class PhoneLoginPageUsers extends StatefulWidget {
   @override
-  _PhoneLoginPageState createState() => _PhoneLoginPageState();
+  _PhoneLoginPageUsersState createState() => _PhoneLoginPageUsersState();
 }
 
-class _PhoneLoginPageState extends State<PhoneLoginPage> {
+class _PhoneLoginPageUsersState extends State<PhoneLoginPageUsers> {
   String _phoneNumber = '';
   String _verificationCode = '';
   bool _isLoading = false;
@@ -40,7 +40,7 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
         showDialog(
           context: context,
           builder: (_) => AlertDialog(
-            title: const Text('Введите код верификации'),
+            title: const Text('Enter code verification'),
             content: TextField(
               onChanged: (value) {
                 setState(() {
@@ -65,7 +65,7 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomePage()));
                   });
                 },
-                child: const Text('Подтвердить'),
+                child: const Text('Confirm'),
 
               ),
 
@@ -97,17 +97,20 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
                   });
                 },
                 decoration: const InputDecoration(
-                  hintText: 'Телефон:',
+                  hintText: 'User Phone:',
                 ),
               ),
             ),
             const SizedBox(height: 20.0),
             ElevatedButton(
+
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black, ), foregroundColor: MaterialStateProperty.all(Colors.blue),),
               onPressed: _verifyPhoneNumber,
+
               child: const Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: 20.0, vertical: 10.0),
-                child: Text('Вход'),
+                child: Text('Enter', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),),
               ),
             ),
           ],
