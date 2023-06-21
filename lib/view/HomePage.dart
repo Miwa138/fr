@@ -4,7 +4,7 @@ import 'package:fr/view/AnketeFree.dart';
 import 'package:fr/view/MainPages/ListFreeOrders.dart';
 import 'package:fr/view/MainPages/ListSellers.dart';
 import 'package:fr/view/Profile.dart';
-import 'package:fr/view/ProfileSeller.dart';
+
 CollectionReference users = FirebaseFirestore.instance.collection('users');
 var currentPageIndex = 0;
 

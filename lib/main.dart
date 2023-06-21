@@ -42,13 +42,13 @@ class MyApp extends StatelessWidget {
           }
           if (snapshot.hasData) {
 
-            return const HomePage();
+            return  PhoneLoginPage();
           }
           return const Landing();
         },),
       routes: {
         'home_page': (context) => const HomePage(),
-        "phone_login_page": (context) => const PhoneLoginPage(),
+        "phone_login_page": (context) =>  PhoneLoginPage(),
         "google_login_page": (context) => const GoogleLoginPage(),
         "google_seller_login_page": (context) => const SellerGoogleLoginPage(),
         "profile_page": (context) => const ProfilePage(),

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fr/firebase/auth/auth_controller.dart';
 import 'package:fr/firebase/auth/seller_auth_controller.dart';
+import 'package:fr/view/auth/PhoneLoginPage.dart';
 
 final SellerAuthController _authController = SellerAuthController();
 
@@ -23,7 +24,8 @@ class _LoginPageState extends State<RegestrationSeller> {
             children: [
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'phone_login_page');
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> PhoneLoginPage()));
+                  // Navigator.pushNamed(context, 'phone_login_page');
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.black),
